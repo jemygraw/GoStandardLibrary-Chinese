@@ -14,9 +14,9 @@ tar包实现了访问tar归档文件的方法。该包目标覆盖各种变种�
 
 参考：
 
-[http://www.freebsd.org/cgi/man.cgi?query=tar&sektion=5](http://www.freebsd.org/cgi/man.cgi?query=tar&sektion=5)
-[http://www.gnu.org/software/tar/manual/html_node/Standard.html](http://www.gnu.org/software/tar/manual/html_node/Standard.html)
-[http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html)
+[http://www.freebsd.org/cgi/man.cgi?query=tar&sektion=5](http://www.freebsd.org/cgi/man.cgi?query=tar&sektion=5)  
+[http://www.gnu.org/software/tar/manual/html_node/Standard.html](http://www.gnu.org/software/tar/manual/html_node/Standard.html)  
+[http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html)  
 
 **常量**
 
