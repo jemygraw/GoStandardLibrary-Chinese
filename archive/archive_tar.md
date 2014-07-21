@@ -1,7 +1,5 @@
 # archive/tar
 
-标签（空格分隔）： Go标准库
-
 import "archive/tar"
 
 **简介**
