@@ -1,24 +1,26 @@
 # Golang标准库中文版
 
-**翻译By：** Go友团([http://golanghome.com](http://golanghome.com))
+###翻译By
+Go友团([http://golanghome.com](http://golanghome.com))
 
-**项目地址：**[GoStandardLibrary-Chinese](http://github.com/jemygraw/GoStandardLibrary-Chinese)
+###项目地址
+[GoStandardLibrary-Chinese](http://github.com/jemygraw/GoStandardLibrary-Chinese)
 
-**成员：**  
-[@jemygraw](http://github.com/jemygraw), [@itfanr](http://github.com/itfanr)
+###成员  
+[@jemygraw](http://github.com/jemygraw), [@itfanr](http://github.com/itfanr), [@getwe](http://github.com/getwe)
 
-**致谢：**  
+###致谢  
 1. 感谢 [@ghosert](http://weibo.com/ghosert) 创立的 [作业部落](https://www.zybuluo.com/mdeditor) ，史上最好的Markdown编辑器。  
 2. 感谢Google为我们提供的革命性编程语言[Golang](http://golang.org)。  
 3. 感谢所有支持我们，为我们的努力欢呼的小伙伴们！  
 4. 感谢上天给我一次来到地球的机会。哈哈！  
 
-**包翻译状态**  
+###包翻译状态  
 1. 未翻译 － 该包未被占用也未被翻译。  
 2. 已占用 － 该包正在被别人翻译，优先merge该成员的pull request，当该成员未能如期完成时，包状态恢复未翻译，可以再次申请占用。  
 3. 已翻译 － 该包已经被翻译，并且pull request已经merge，你可以查看翻译，并给出建议。  
 
-**参与方法**  
+###参与方法  
 1. 首先Fork项目。  
 2. 然后查看项目README文件选择一个未被占用或未被翻译的包，到[这里](https://github.com/jemygraw/GoStandardLibrary-Chinese/issues/1)申请占用，并翻译。  
 3. 申请占用翻译的时候，需提供你能够预期完成的时间，超过该时间后，pull request将不再被接受，并且该包状态恢复未翻译，可供他人申请占用翻译。  
@@ -26,7 +28,7 @@
 5. 翻译以包为单位，如果有子包，则上一层包和子包属于不同的包。  
 6. 可以对自己或他人翻译完成的包提交校验pull request，这时将署名为校验人  。
 
-**翻译文件规范**  
+###翻译文件规范  
 为了统一翻译风格，请参考文件[archive_tar.md](https://github.com/jemygraw/GoStandardLibrary-Chinese/blob/master/archive/archive_tar.md)。  
 主要内容有下面几点：  
 1. 翻译的标准库以Go1.3的为准。  
