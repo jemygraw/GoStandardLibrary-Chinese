@@ -30,7 +30,7 @@ Go友团([http://golanghome.com](http://golanghome.com))
 
 ###标准库网址
 
-如果你无法访问go语言官网（golang.org），可以访问以下的两个网址来作为go stard library参考。
+如果你无法访问golang.org可以访问以下的两个网址来作为Go Standard Library参考。
 
  -  http://godoc.golangtc.com/doc/
  -  http://docs.studygolang.com/doc/
