@@ -28,6 +28,13 @@ Go友团([http://golanghome.com](http://golanghome.com))
 5. 翻译以包为单位，如果有子包，则上一层包和子包属于不同的包。  
 6. 可以对自己或他人翻译完成的包提交校验pull request，这时将署名为校验人  。
 
+###标准库网址
+
+如果你无法访问golang.org可以访问以下的两个网址来作为Go Standard Library参考。
+
+ -  http://godoc.golangtc.com/doc/
+ -  http://docs.studygolang.com/doc/
+
 ###翻译文件规范  
 为了统一翻译风格，请参考文件[archive_tar.md](https://github.com/jemygraw/GoStandardLibrary-Chinese/blob/master/archive/archive_tar.md)。  
 主要内容有下面几点：  
