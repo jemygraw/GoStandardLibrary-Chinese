@@ -34,6 +34,7 @@ Go友团([http://golanghome.com](http://golanghome.com))
 
  -  http://godoc.golangtc.com/doc/
  -  http://docs.studygolang.com/doc/
+ -  或者使用本地的。命令行下面输入`godoc -http=localhost:6060`或者Windows下面就有一个GoDocServer的。打开浏览器输入`http://localhost:6060`就可以看到了。
 
 ###翻译文件规范  
 为了统一翻译风格，请参考文件[archive_tar.md](https://github.com/jemygraw/GoStandardLibrary-Chinese/blob/master/archive/archive_tar.md)。  
