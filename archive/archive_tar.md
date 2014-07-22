@@ -43,16 +43,16 @@ const (
 ###变量
 ```go
 var (
-        //写入内容太长错误
+        // 写入内容太长错误
         ErrWriteTooLong    = errors.New("archive/tar: write too long")
-        //头部内容太长错误
+        // 头部内容太长错误
         ErrFieldTooLong    = errors.New("archive/tar: header field too long")
-        //在关闭文件后写入错误
+        // 在关闭文件后写入错误
         ErrWriteAfterClose = errors.New("archive/tar: write after close")
 )
 
 var (
-        //非法头部错误
+        // 非法头部错误
         ErrHeader = errors.New("archive/tar: invalid tar header")
 )
 ```
