@@ -35,7 +35,7 @@
 4. 空一行。  
 5. 然后是import导入包的方式，比如`import "archive/tar"`。  
 6. 下面是`简介(Synopsis)`，就是标准库Packages页面的包简单描述。  
-7. 然后是`概览(Overview)`，为标准库详细页面的描述，不需要包括示例（Examples）  。
+7. 然后是`概览(Overview)`，为标准库详细页面的描述，不需要包括示例（Examples）。  
 8. 然后依次按照标准库页面内容，翻译每一项。每一项的标题用粗体表示，然后是原型代码，然后是详细描述。  
 9. 为了使得翻译文件内容清晰，每个自然段落多加一个空行。  
 10. Merge的时候，由[@jemygraw](https://github.com/jemygraw)统一检查完格式后merge。  
