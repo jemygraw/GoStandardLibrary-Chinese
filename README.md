@@ -55,8 +55,8 @@ Go友团([http://golanghome.com](http://golanghome.com))
 
 |   包名             |               翻译人                      |  状态  |   起始时间  | 预期结束时间 | 实际结束时间  |    校验人  |
 |-------------------|--------------------------|------------------------------------------|-------|------------|------------|-------------|------------|
-|[archive/tar]()| [@jemygraw](https://github.com/jemygraw) | 已翻译 | 2014/07/16 | 2014/07/16 |2014/07/16   |            |
-|[archive/zip]()| [@jemygraw](https://github.com/jemygraw) | 已占用 | 2014/07/21 | 2014/07/22 |             |            |
+|[archive/tar]()| [@jemygraw](https://github.com/jemygraw) | 已翻译 | 2014/07/16 | 2014/07/16 | 2014/07/16   |            |
+|[archive/zip]()| [@jemygraw](https://github.com/jemygraw) | 已翻译 | 2014/07/21 | 2014/07/22 | 2014/07/22   |            |
 |[bufio]()|[@getwe](https://github.com/getwe)|已占用|2014/07/23|2014/07/24||||
 |[builtin]()||||||||
 |[bytes]()||||||||
