@@ -1,14 +1,12 @@
 # archive/tar
 
-标签（空格分隔）： Go标准库
-
 import "archive/tar"
 
-**简介**
+##简介
 
 tar包实现了访问tar归档文件的方法。
 
-**概览**
+##概览
 
 tar包实现了访问tar归档文件的方法。该包目标覆盖各种变种，包括GNU和BSD的tar归档文件。
 
@@ -18,7 +16,9 @@ tar包实现了访问tar归档文件的方法。该包目标覆盖各种变种�
 [http://www.gnu.org/software/tar/manual/html_node/Standard.html](http://www.gnu.org/software/tar/manual/html_node/Standard.html)  
 [http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html](http://pubs.opengroup.org/onlinepubs/9699919799/utilities/pax.html)  
 
-**常量**
+##内容
+
+###常量
 
 ```go
 const (
@@ -40,8 +40,7 @@ const (
 )
 ```
 
-**变量**
-
+###变量
 ```go
 var (
         //写入内容太长错误
@@ -58,7 +57,7 @@ var (
 )
 ```
 
-**type Header**
+###type Header
 ```go
 type Header struct {
         Name       string    // 头部名称，一般设置为文件名全路径
@@ -80,20 +79,19 @@ type Header struct {
 ```
 头部表示一个tar归档文件的一个头部信息。头部信息的一些域可以不填充数据。
 
-**func FileInfoHeader**
+###func FileInfoHeader
 ```go
 func FileInfoHeader(fi os.FileInfo, link string) (*Header, error)
 ```
 FileInfoHeader根据fi创建一个域部分填充的头部。如果fi表示一个符号链接的话，FileInfoHeader就把链接当作链接目标。如果fi是一个目录的话，文件名称会被追加一个斜杠（/）。因为os.FileInfo的方法Name()返回的是文件的短文件名，而不是全路径，所以可能需要修改返回的tar头部的Name域，以提供一个文件的全路径。
 
-**func (*Header) FileInfo**
+###func (*Header) FileInfo
 ```go
 func (h *Header) FileInfo() os.FileInfo
 ```
 FileInfo 返回一个tar头部的os.FileInfo信息。
 
-**type Reader**
-
+###type Reader
 ```go
 type Reader struct {
         // 包含过滤掉的或未导出的域
@@ -101,25 +99,25 @@ type Reader struct {
 ```
 Reader提供了对一个tar归档文件内容的顺序访问。一个tar归档文件由一系列文件组成。Next()方法指向归档文件中的每个文件（包括第一个文件）的开始处，然后就可以使用io.Reader来访问文件的数据。
 
-**func NewReader**
+###func NewReader
 ```go
 func NewReader(r io.Reader) *Reader
 ```
 NewReader()方法从一个io.Reader创建一个新的tar的Reader。
 
-**func (*Reader) Next**
+###func (*Reader) Next
 ```go
 func (tr *Reader) Next() (*Header, error)
 ```
 Next()方法指向tar归档文件中的下一个文件（包括第一个文件）的开始处。
 
-**func (*Reader) Read**
+###func (*Reader) Read
 ```go
 func (tr *Reader) Read(b []byte) (n int, err error)
 ```
 Read()方法从当前指向的tar归档文件中的文件的开始处读取数据。当读取到当前文件的末尾时，它返回0和io.EOF。当Next()再被调用时，重新从下一个文件的开始处读取数据。
 
-**type Writer**
+###type Writer
 ```go
 type Writer struct {
         // 包含过滤掉的或未导出的域
@@ -127,31 +125,31 @@ type Writer struct {
 ```
 Writer提供了对tar归档文件（POSIX.1格式）内容的顺序写入。tar归档文件由一系列文件组成。调用WriteHeader来开始创建一个新文件，然后调用Write方法来将数据写入文件中，一共可以写入最多hdr.Size个字节。
 
-**func NewWriter**
+###func NewWriter
 ```go
 func NewWriter(w io.Writer) *Writer
 ```
 NewWriter()方法创建一个向io.Writer写入数据的tar的Writer。
 
-**func (*Writer) Close**
+###func (*Writer) Close
 ```go
 func (tw *Writer) Close() error
 ```
 Close()方法关闭tar归档文件，将所有没有写入到底层writer的数据写入。
 
-**func (*Writer) Flush**
+###func (*Writer) Flush
 ```go
 func (tw *Writer) Flush() error
 ```
 Flush()方法结束写入数据到当前文件（可选）。
 
-**func (*Writer) Write**
+###func (*Writer) Write
 ```go
 func (tw *Writer) Write(b []byte) (n int, err error)
 ```
 Writer()方法向tar归档文件中当前指向的文件写入数据。如果在调用WriteHeader()方法后写入文件的字节数大于hdr.Size的时候返回错误ErrWriteTooLong。
 
-**func (*Writer) WriteHeader**
+###func (*Writer) WriteHeader
 ```go
 func (tw *Writer) WriteHeader(hdr *Header) error
 ```
