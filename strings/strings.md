@@ -249,7 +249,7 @@ func TrimRightFunc(s string, f func(rune) bool) string
 
 ###func TrimSpace
 ```go
-`func TrimSpace(s string) string`
+func TrimSpace(s string) string
 ```
 去掉头部和尾部的空白符，包括空格、制表符、换行符。
 
