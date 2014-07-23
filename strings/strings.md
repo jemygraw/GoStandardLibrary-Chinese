@@ -1,6 +1,7 @@
 ﻿# strings包
 
 import "strings"
+
 ---
 
 ##简介
@@ -200,7 +201,7 @@ func ToUpper(s string) string
 
 ###func ToUpperSpecial
 ```go
-`func ToUpperSpecial(_case unicode.SpecialCase, s string) string`
+func ToUpperSpecial(_case unicode.SpecialCase, s string) string
 ```
 TODO
 
