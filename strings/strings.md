@@ -54,7 +54,7 @@ func Fields(s string) []string
 ```go
 func FieldsFunc(s string, f func(rune) bool) []string
 ```
-按字符串`s`内的满足某种要求的rune字符来切割字符串`s`，并返回子串组成的切片。这种要求通过函数`f`来自定义。如果s只包含空格，那么返回空切片。
+按字符串`s`内的满足某种要求的rune字符来切割字符串`s`，并返回子串组成的切片。这种要求通过函数`f`来自定义。如果s只包含空格，那么返回空切片。也就是说，我们可以通过实现一个回调函数来指定分隔字符串 `s`的字符。
 
 ###func HasPrefix
 ```go
@@ -150,19 +150,20 @@ func Split(s, sep string) []string
 ```go
 func SplitAfter(s, sep string) []string
 ```
-以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片,除了最后的切片元素，每个元素以sep结尾。如果`sep`为空，那么按照UTF-8编码分隔每一个字符，等效于SplitN函数当`count`取值为-1的情形。
+以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片,除了最后的切片元素，每个元素以sep结尾（即保留`step`）。如果`sep`为空，那么按照UTF-8编码分隔每一个字符，等效于SplitN函数当`count`取值为-1的情形。
 
 ###func SplitAfterN
 ```go
 func SplitAfterN(s, sep string, n int) []string
 ```
-TODO
+以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片,除了最后的切片元素，每个元素以sep结尾（即保留`step`）。如果`sep`为空，那么按照UTF-8编码分隔每一个字符。可以通过最后一个参数 `n` 控制返回的结果中的 slice 中的元素个数，当 n < 0 时，返回所有的子字符串；当 n == 0 时，返回的结果是 nil；当 n > 0 时，表示返回的 slice 中最多只有 `n` 个元素，其中，最后一个元素不会分割。
 
 ###func SplitN
 ```go
-func SplitAfterN(s, sep string, n int) []string
+func SplitN(s, sep string, n int) []string
 ```
-TODO
+以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片。如果`sep`为空，那么按照UTF-8编码分隔每一个字符。可以通过最后一个参数 `n` 控制返回的结果中的 slice 中的元素个数，当 n < 0 时，返回所有的子字符串；当 n == 0 时，返回的结果是 nil；当 n > 0 时，表示返回的 slice 中最多只有 `n` 个元素，其中，最后一个元素不会分割。
+
 ###func Title
 ```go
 func Title(s string) string
@@ -265,7 +266,7 @@ type Reader struct {
     // contains filtered or unexported fields
 }
 ```
-实现了io.Reader, io.ReaderAt, io.Seeker, io.WriterTo, io.ByteScanner, and io.RuneScanner接口。
+Reader 结构没有导出任何字段。它实现了 io.Reader（Read 方法），io.ReaderAt（ReadAt 方法），io.Seeker（Seek 方法），io.WriterTo（WriteTo 方法），io.ByteReader（ReadByte 方法），io.ByteScanner（ReadByte 和 UnreadByte 方法），io.RuneReader（ReadRune 方法） 和 io.RuneScanner（ReadRune 和 UnreadRune 方法）。
 
 ###func  NewReader
 ```go
