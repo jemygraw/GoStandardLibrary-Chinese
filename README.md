@@ -172,8 +172,8 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[runtime/pprof]()|||||||
 |[runtime/race]()|||||||
 |[sort]()|||||||
-|[strconv]()|||||||
-|[strings]()|[@itfanr](https://github.com/itfanr)|已占用|2014/07/22|2014/07/24|||
+|[strconv]()|[@itfanr](https://github.com/itfanr)|已占用|2014/07/24|2014/07/27|||
+|[strings]()|[@itfanr](https://github.com/itfanr)|已完成|2014/07/22|2014/07/24|2014/07/24||
 |[sync]()|||||||
 |[sync/atomic]()|||||||
 |[syscall]()|||||||
