@@ -24,13 +24,13 @@ func Contains(s, substr string) bool
 ```go
 func ContainsAny(s, chars string) bool
 ```
-如果`s`包含`chars`中的任意一个字符，则返回true。
+如果字符串`s`包含`chars`中的任意一个字符，则返回true。
 
 ###func ContainsRune
 ```go
 func ContainsRune(s string, r rune) bool
 ```
-如果`s`包含`r`中的任意一个rune类型字符，则返回true。
+如果字符串`s`包含rune类型字符`r`，则返回true。
 
 ###func Count
 ```go
@@ -48,7 +48,7 @@ func EqualFold(s, t string) bool
 ```go
 func Fields(s string) []string
 ```
-按字符串`s`内的空格或者连续的空格来切割字符串`s`，并返回子串组成的切片。空格由unicode.IsSpace来定义。如果`s`只包含空格，那么返回空切片。
+按字符串`s`内的空格或者连续的空格来拆分字符串`s`，并返回子串组成的切片。空格由unicode.IsSpace来定义。如果`s`只包含空格，那么返回空切片。
 
 ###func FieldsFunc
 ```go
