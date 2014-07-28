@@ -1,8 +1,6 @@
-﻿# strings包
+﻿# strings
 
 import "strings"
-
----
 
 ##简介
 
@@ -24,37 +22,37 @@ func Contains(s, substr string) bool
 ```go
 func ContainsAny(s, chars string) bool
 ```
-如果`s`包含`chars`中的任意一个字符，则返回true。
+如果字符串`s`包含`chars`中的任意一个字符，则返回true。
 
 ###func ContainsRune
 ```go
 func ContainsRune(s string, r rune) bool
 ```
-如果`s`包含`r`中的任意一个rune类型字符，则返回true。
+如果字符串`s`包含`r`所代表的rune字符，则返回true。
 
 ###func Count
 ```go
 func Count(s, sep string) int
 ```
-返回字符串`s`中包含的字符串`sep`中的字符的数目。特别注意如果`sep`为空格时的情形。
+返回字符串`s`中包含的字符串`sep`中的数量。特别注意当`sep`为空的时候，会返回字符串`s`加上字符串前后的空字符的新字符串的长度。
 
 ###func EqualFold
 ```go
 func EqualFold(s, t string) bool
 ```
-比较字符串`s`和`t`，当采用UTF-8编码，两者全部小写时若相等，则返回ture。
+比较字符串`s`和`t`，即当采用UTF-8编码，两者全部大写时若相等，则返回ture。
 
 ###func Fields
 ```go
 func Fields(s string) []string
 ```
-按字符串`s`内的空格或者连续的空格来切割字符串`s`，并返回子串组成的切片。空格由unicode.IsSpace来定义。如果`s`只包含空格，那么返回空切片。
+按字符串`s`内的空白字符或者连续的空白字符来切割字符串`s`，并返回子串组成的切片。空白字符由unicode.IsSpace来定义。如果`s`只包含空白字符，那么返回空切片。
 
 ###func FieldsFunc
 ```go
 func FieldsFunc(s string, f func(rune) bool) []string
 ```
-按字符串`s`内的满足某种要求的rune字符来切割字符串`s`，并返回子串组成的切片。这种要求通过函数`f`来自定义。如果s只包含空格，那么返回空切片。也就是说，我们可以通过实现一个回调函数来指定分隔字符串 `s`的字符。
+按字符串`s`内的满足某种要求的rune字符来切割字符串`s`，并返回子串组成的切片。这种要求通过函数`f`来自定义。如果s只包含空白字符，那么返回空切片。也就是说，我们可以通过实现一个回调函数来指定分割字符串`s`的字符。
 
 ###func HasPrefix
 ```go
@@ -78,7 +76,7 @@ func Index(s, sep string) int
 ```go
 func IndexAny(s, chars string) int
 ```
-返回字符串`chars`中的任意字符在字符串`s`中第一次出现处的索引。如果`s`中不包含`chars`中的所有字符，则返回-1。
+返回字符串`chars`中的任意字符在字符串`s`中第一次出现处的索引。如果`s`中不包含`chars`中的任何字符，则返回-1。
 
 ###func IndexByte
 ```go
@@ -114,7 +112,7 @@ func LastIndex(s, sep string) int
 ```go
 func LastIndexAny(s, chars string) int
 ```
-返回字符串`chars`中的任意字符在字符串`s`中最后一次出现处的索引。如果`s`中不包含`chars`中的所有字符，则返回-1。
+返回字符串`chars`中的任意字符在字符串`s`中最后一次出现处的索引。如果`s`中不包含`chars`中的任何字符，则返回-1。
 
 ###func LastIndexFunc
 ```go
@@ -126,7 +124,7 @@ func LastIndexFunc(s string, f func(rune) bool) int
 ```go
 func Map(mapping func(rune) rune, s string) string
 ```
-按照某种规则将字符串`s`中的每个字符做映射处理，然后返回字符串`s`。这个规则通过函数`mapping`来自定义。如果`mapping`返回负数，则该字符被丢弃。
+按照某种规则将字符串`s`中的每个字符做映射处理，然后返回每个元素被映射后的字符串。这个规则通过函数`mapping`来自定义。如果`mapping`返回负数，则该字符被丢弃。
 
 ###func Repeat
 ```go
@@ -138,7 +136,7 @@ func Repeat(s string, count int) string
 ```go
 func Replace(s, old, new string, n int) string
 ```
-将字符串`s`中的`n`个`old`字符串用`new`来替换。如果`n`小于0，则对要替换的`old`字符串个数没有限制。
+将字符串`s`中的`n`个`old`字符串用`new`字符串来替换。如果`n`小于0，则对要替换的`old`字符串个数没有限制。
 
 ###func Split
 ```go
@@ -150,7 +148,7 @@ func Split(s, sep string) []string
 ```go
 func SplitAfter(s, sep string) []string
 ```
-以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片,除了最后的切片元素，每个元素以sep结尾（即保留`step`）。如果`sep`为空，那么按照UTF-8编码分隔每一个字符，等效于SplitN函数当`count`取值为-1的情形。
+以字符串`sep`来拆分字符串`s`，然后返回由该字符串拆分形成的子字符串切片,除了最后的切片元素，每个元素以sep结尾（即保留`sep`）。如果`sep`为空，那么按照UTF-8编码分隔每一个字符，等效于SplitN函数当`count`取值为-1的情形。
 
 ###func SplitAfterN
 ```go
@@ -168,13 +166,13 @@ func SplitN(s, sep string, n int) []string
 ```go
 func Title(s string) string
 ```
-将字符中串的每个单词的首字母大写，并返回字符串。
+将字符串中的每个单词的首字母转为大写，并返回一个新的字符串。
 
 ###func ToLower
 ```go
 func ToLower(s string) string
 ```
-将字符串的每个字符全部小写，然后返回字符串。
+将字符串的每个字符转换为小写，然后返回一个新的字符串。
 
 ###func ToLowerSpecial
 ```go
@@ -186,7 +184,7 @@ TODO
 ```go
 func ToTitle(s string) string
 ```
-将字符串的每个字符全部大写，然后返回字符串。
+将字符串的每个字符转换为大写，然后返回一个新的字符串。
 
 ###func ToTitleSpecial
 ```go
@@ -198,7 +196,7 @@ TODO
 ```go
 func ToUpper(s string) string
 ```
-将字符串的每个字符全部大写，然后返回字符串。
+将字符串的每个字符转换为大写，然后返回一个新的字符串。
 
 ###func ToUpperSpecial
 ```go
@@ -210,7 +208,7 @@ TODO
 ```go
 func Trim(s string, cutset string) string
 ```
-去掉字符串`s`的头部和尾部的一些字符并返回字符串。这些字符由字符串`cutset`自定义。
+去掉字符串`s`的头部和尾部的一些字符并返回一个新的字符串。这些字符由字符串`cutset`自定义。
 
 ###func TrimFunc
 ```go
@@ -351,4 +349,3 @@ func (r *Replacer) Replace(s string) string
 func (r *Replacer) WriteString(w io.Writer, s string) (n int, err error)
 ```
 按照Replacer类型`r`所指定的替换规则替换字符串`s`中的字符，并将处理后的字符串写入io.Writer对象`w`中。
-
