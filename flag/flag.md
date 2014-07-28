@@ -93,21 +93,25 @@ func Args() []string
 ```go
 func Bool(name string, value bool, usage string) *bool
 ```
+定义了一个bool类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。返回值是一个bool指针，它所存储的地址用来保存flag的值。
 
 ###func BoolVar
 ```go
 func BoolVar(p *bool, name string, value bool, usage string)
 ```
+定义了一个bool类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。指针`p`指向的bool变量用来存储flag的值。
 
 ###func Duration
 ```go
 func Duration(name string, value time.Duration, usage string) *time.Duration
 ```
+定义了一个time.Duration类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。返回值是一个time.Duration指针，它所存储的地址用来保存flag的值。
 
 ###func DurationVar
 ```go
 func DurationVar(p *time.Duration, name string, value time.Duration, usage string)
 ```
+定义了一个time.Duration类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。指针`p`指向的time.Duration变量用来存储flag的值。
 
 ###func Float64
 ```go
@@ -147,13 +151,13 @@ func IntVar(p *int, name string, value int, usage string)
 ```go
 func NArg() int
 ```
-当flags被处理后，返回non-flag参数的个数。
+当flags完成后，返回non-flag参数的个数。
 
 ###func NFlag
 ```go
 func NFlag() int
 ```
-返回命令行中已经被设置的flags个数。
+返回命令行中已经设置的flags个数。
 
 >获得FlagSet中actual长度（即被设置了的参数个数）。
 
@@ -198,11 +202,13 @@ func String(name string, value string, usage string) *string
 ```go
 func StringVar(p *string, name string, value string, usage string)
 ```
+定义了一个string类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。指针`p`指向的string变量用来存储flag的值。
 
 ###func Uint
 ```go
 func Uint(name string, value uint, usage string) *uint
 ```
+定义了一个uint类型的flag并指定了一个具体的flag名字`name`，默认值是`value`，使用说明是`usage`，也就是给用户的提示信息。返回值是一个uint指针，它所存储的地址用来保存flag的值。
 
 ###func Uint64
 ```go
@@ -292,11 +298,13 @@ func NewFlagSet(name string, errorHandling ErrorHandling) *FlagSet
 ```go
 func (f *FlagSet) Arg(i int) string
 ```
+返回第`i`个参数。Arg(0)是所有的flags解析后的第一个剩余的参数，
 
 ###func (*FlagSet) Args
 ```go
 func (f *FlagSet) Args() []string
 ```
+返回non-flag参数。
 
 ###func (*FlagSet) Bool
 ```go
@@ -332,6 +340,7 @@ func (f *FlagSet) Float64Var(p *float64, name string, value float64, usage strin
 ```go
 func (f *FlagSet) Init(name string, errorHandling ErrorHandling)
 ```
+为一个flag集合设置`name`和`errorHandling`处理函数。默认情况下，zero FlagSet使用空`name`和ContinueOnError处理策略。
 
 ###func (*FlagSet) Int
 ```go
@@ -357,16 +366,19 @@ func (f *FlagSet) IntVar(p *int, name string, value int, usage string)
 ```go
 func (f *FlagSet) Lookup(name string) *Flag
 ```
+返回已命名的flag的Flag结构。如果没有则返回nil。
 
 ###func (*FlagSet) NArg
 ```go
 func (f *FlagSet) NArg() int
 ```
+当所有的flags解析完成后，返回剩余的参数个数。
 
 ###func (*FlagSet) NFlag
 ```go
 func (f *FlagSet) NFlag() int
 ```
+返回已经设置的flags个数。
 
 ###func (*FlagSet) Parse
 ```go
@@ -374,21 +386,23 @@ func (f *FlagSet) Parse(arguments []string) error
 ```
 从参数列表中解析flag定义，不应该包含命令名字。必须在FlagSet中的所有flags都被定义并且flags被程序获取到之后调用。如果-help被设置但是没有定义，返回ErrHelp。
 
-
 ###func (*FlagSet) Parsed
 ```go
 func (f *FlagSet) Parsed() bool
 ```
+返回f.Parse()是否已经调用。
 
 ###func (*FlagSet) PrintDefaults
 ```go
 func (f *FlagSet) PrintDefaults()
 ```
+向标准错误输出打印所有flags的默认值。如果你自己设置了，另当别论。
 
 ###func (*FlagSet) Set
 ```go
 func (f *FlagSet) Set(name, value string) error
 ```
+设置已经命名了的flag。
 
 ###func (*FlagSet) SetOutput
 ```go
@@ -435,11 +449,13 @@ func (f *FlagSet) Var(value Value, name string, usage string)
 ```go
 func (f *FlagSet) Visit(fn func(*Flag))
 ```
+按照字典顺序访问命令行参数，并对每个执行`fn`函数。只访问那些已经设置的flags。
 
 ###func (*FlagSet) VisitAll
 ```go
 func (f *FlagSet) VisitAll(fn func(*Flag))
 ```
+按照字典顺序访问命令行参数，并对每个执行`fn`函数。访问所有的flags，无论是否已经设置。
 
 ###type Getter
 ```go
@@ -448,6 +464,9 @@ type Getter interface {
     Get() interface{}
 }
 ```
+Getter是一个接口，允许重新取回Value的内容。它封装了值的接口，而不是作为它的一部分，因为它在GO 1版本后出现的，为了实现兼容性。
+
+本包提供的所有的Value类型满足Getter接口。
 
 ###type Value
 ```go
