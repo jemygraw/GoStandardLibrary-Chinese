@@ -93,7 +93,6 @@ Match判断name是否匹配shell文件名模板.模板语法是:
 		c           matches character c (c != '\\', '-', ']')
 		'\\' c      matches character c
 		lo '-' hi   matches character c for lo <= c <= hi
-```
 
 Match要求模板匹配名字的整个部分,不仅仅是其中一个子串.唯一有可能返回的错误是`ErrBadPattern`,当模板是错误的.
 
