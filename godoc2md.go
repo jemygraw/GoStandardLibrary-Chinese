@@ -9,10 +9,10 @@ import (
 	"strings"
 )
 
-var src, dst string
+var src string
+var dst string
 
 func init() {
-	flag.StringVar(&src, "src", "", "source file: -src filepath")
 	flag.StringVar(&dst, "dst", "", "dst file: -dst filepath")
 	flag.Parse()
 }
@@ -26,15 +26,15 @@ func main() {
 	funcCompile, _ := regexp.Compile(funcPattern)
 	methodCompile, _ := regexp.Compile(methodPattern)
 	typeCompile, _ := regexp.Compile(typePattern)
-	srcfile, err := os.Open(src)
-	check(err)
-	defer srcfile.Close()
+
+	srcfile := os.Stdin
 
 	dstfile, err := os.Create(dst)
 	check(err)
-	defer srcfile.Close()
-	scanner := bufio.NewScanner(srcfile)
+	defer dstfile.Close()
 
+	scanner := bufio.NewScanner(srcfile)
+	defer srcfile.Close()
 	mflag := false
 
 	for scanner.Scan() {
@@ -61,7 +61,6 @@ func main() {
 			fmt.Fprintf(dstfile, "###%s\n", methodName[0])
 			withgo(dstfile, line)
 			fmt.Fprint(dstfile, "```\n\n")
-
 		}
 
 		if ok := typeCompile.MatchString(line); ok {
