@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"os"
 	"regexp"
+	"strings"
 )
 
 var dst string
@@ -38,6 +39,9 @@ func main() {
 		line := scanner.Text()
 		//struct和interface内容单独判断
 		if mflag {
+			if strings.HasPrefix(line, "    //") || line == "\n" {
+				continue
+			}
 			fmt.Fprintln(dstfile, line)
 			if line == "}" {
 				fmt.Fprint(dstfile, "```\n\n")
