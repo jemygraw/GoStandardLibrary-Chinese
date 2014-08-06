@@ -12,12 +12,13 @@ Go友团([http://golanghome.com](http://golanghome.com))
 ###致谢  
 1. 感谢Google为我们提供的革命性编程语言[Golang](http://golang.org)。  
 2. 感谢所有支持我们，为我们的努力欢呼的小伙伴们！  
-3. 感谢上天给我一次来到地球的机会。哈哈！  
+3. 感谢上天给我们一次来到地球的机会。哈哈！  
 
 ###包翻译状态  
 1. 未翻译 － 该包未被占用也未被翻译。  
 2. 已占用 － 该包正在被别人翻译，优先merge该成员的pull request，当该成员未能如期完成时，包状态恢复未翻译，可以再次申请占用。  
 3. 已翻译 － 该包已经被翻译，并且pull request已经merge，你可以查看翻译，并给出建议。  
+4. 已完成 － 该包的翻译已经校验完成。
 
 ###参与方法  
 1. 首先Fork项目。  
@@ -56,9 +57,9 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |-------------------|--------------------------|------------------------------------------|-------|------------|------------|-------------|------------|
 |[archive/tar]()| [@jemygraw](https://github.com/jemygraw) | 已翻译 | 2014/07/16 | 2014/07/16 | 2014/07/16   |            |
 |[archive/zip]()| [@jemygraw](https://github.com/jemygraw) | 已翻译 | 2014/07/21 | 2014/07/22 | 2014/07/22   |            |
-|[bufio]()|[@getwe](https://github.com/getwe)|已占用|2014/07/23|2014/07/24||||
-|[builtin]()||||||||
-|[bytes]()||||||||
+|[bufio]()      | [@getwe](https://github.com/getwe)       |已翻译  |2014/07/23  |2014/07/24  |2014/07/25    |            |
+|[builtin]()|||||||
+|[bytes]()|||||||
 |[compress/bzip2]()|||||||
 |[compress/flate]()|||||||
 |[compress/gzip]()|||||||
@@ -107,7 +108,7 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[encoding/xml]()|||||||
 |[errors]()|||||||
 |[expvar]()|||||||
-|[flag]()|||||||
+|[flag]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/07/26|2014/07/29|2014/07/29||
 |[fmt]()|||||||
 |[go/ast]()|||||||
 |[go/build]()|||||||
@@ -133,8 +134,8 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[image/jpeg]()|||||||
 |[image/png]()|||||||
 |[index/suffixarray]()|||||||
-|[io]()|||||||
-|[io/ioutil]()|||||||
+|[io]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/07/28|2014/08/02|2014/08/02||
+|[io/ioutil]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/07/28|2014/08/02|2014/08/02||
 |[log]()|||||||
 |[log/syslog]()|||||||
 |[math]()|||||||
@@ -144,7 +145,7 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[mime]()|||||||
 |[mime/multipart]()|||||||
 |[net]()|||||||
-|[net/http]()|||||||
+|[net/http]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/08/01|2014/08/07|2014/08/03||
 |[net/http/cgi]()|||||||
 |[net/http/cookiejar]()|||||||
 |[net/http/fcgi]()|||||||
@@ -161,10 +162,10 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[os/exec]()|||||||
 |[os/signal]()|||||||
 |[os/user]()|||||||
-|[path]()|||||||
-|[path/filepath]()|||||||
+|[path]()|[@getwe](https://github.com/getwe)|已翻译|2014/07/30|2014/07/31|2014/07/31||
+|[path/filepath]()|[@getwe](https://github.com/getwe)|已翻译|2014/07/30|2014/07/31|2014/07/31||
 |[reflect]()|||||||
-|[regexp]()|[@baocaixiong](https://github.com/baocaixiong)|已占用|2014/07/24|2014/07/28||||
+|[regexp]()|||||||
 |[regexp/syntax]()|||||||
 |[runtime]()|||||||
 |[runtime/cgo]()|||||||
@@ -172,12 +173,12 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[runtime/pprof]()|||||||
 |[runtime/race]()|||||||
 |[sort]()|||||||
-|[strconv]()|[@itfanr](https://github.com/itfanr)|已占用|2014/07/24|2014/07/27|||
-|[strings]()|[@itfanr](https://github.com/itfanr)|已完成|2014/07/22|2014/07/24|2014/07/24||
-|[sync]()|||||||
+|[strconv]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/07/24|2014/07/27|2014/07/27||
+|[strings]()|[@itfanr](https://github.com/itfanr)|已翻译|2014/07/22|2014/07/24|2014/07/24||
+|[sync]()|[@getwe](https://github.com/getwe)|已翻译|2014/07/26|2014/07/27|2014/07/27||
 |[sync/atomic]()|||||||
 |[syscall]()|||||||
-|[testing]()|||||||re
+|[testing]()|||||||
 |[testing/iotest]()|||||||
 |[testing/quick]()|||||||
 |[text/scanner]()|||||||
@@ -188,4 +189,4 @@ Go友团([http://golanghome.com](http://golanghome.com))
 |[unicode]()|||||||
 |[unicode/utf16]()|||||||
 |[unicode/utf8]()|||||||
-|[unsafe]()|||||||
+|[unsafe]()||||||||
